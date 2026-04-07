@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+var N = parseInt(prompt("Enter N"));
+var seed = parseInt(prompt("Enter seed"));
+
+var current = N;
+
+for (var i = 1; i <= 3; i++) {
+
+    if (current % 2 == 0) {
+        current = Math.floor(current / 2) + seed;
+    } else {
+        current = current * 3 - seed;
+    }
+}
+
+if (current >= 100 && current <= 999) {
+
+    var mid = Math.floor(current / 10) % 10;
+
+    if (mid == seed) {
+        alert("YES, " + current);
+    } else {
+        alert("NO, " + current);
+    }
+
+} else {
+    alert("NO, " + current);
+}
+
+</script>
+</body>
+</html>

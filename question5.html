@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+var N = parseInt(prompt("Enter N"));
+var seed = parseInt(prompt("Enter seed"));
+
+var m = 0;
+var sum = 0;
+
+var skip = seed + 2;
+
+while (sum < N) {
+
+    m = m + 1;
+
+    if (m % skip != 0) {
+        sum = sum + m;
+    }
+}
+
+alert(m + " " + sum);
+
+</script>
+</body>
+</html>

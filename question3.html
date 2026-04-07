@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+var N = parseInt(prompt("Enter N"));
+var K = parseInt(prompt("Enter K"));
+
+var answer = -1;
+
+for (var X = 0; X <= 100000; X++) {
+
+    var num = N + X;
+
+    if (num % K == 0) {
+
+        var temp = num;
+        var rev = 0;
+
+        while (temp > 0) {
+            rev = rev * 10 + (temp % 10);
+            temp = Math.floor(temp / 10);
+        }
+
+        if (rev == num) {
+            answer = X;
+            break;
+        }
+    }
+}
+
+alert(answer);
+
+</script>
+</body>
+</html>

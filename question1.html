@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+var L = parseInt(prompt("Enter L"));
+var R = parseInt(prompt("Enter R"));
+var K = parseInt(prompt("Enter K"));
+
+var count = 0;
+
+for (var x = L; x <= R; x++) {
+
+    if (x % K == 0) {
+
+        var num = x;
+        var sum = 0;
+        var zero = false;
+
+        while (num > 0) {
+            var d = num % 10;
+
+            if (d == 0) {
+                zero = true;
+            }
+
+            sum = sum + d;
+            num = Math.floor(num / 10);
+        }
+
+        var prime = true;
+
+        if (sum < 2) {
+            prime = false;
+        } else {
+            for (var i = 2; i < sum; i++) {
+                if (sum % i == 0) {
+                    prime = false;
+                }
+            }
+        }
+
+        if (zero == false && prime == true) {
+            count = count + 1;
+        }
+    }
+}
+
+alert(count);
+
+</script>
+</body>
+</html>

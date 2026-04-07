@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+var base = parseInt(prompt("Enter base"));
+var distance = parseInt(prompt("Enter distance"));
+var minutesLate = parseInt(prompt("Enter minutesLate"));
+var seed = parseInt(prompt("Enter seed"));
+
+var fare = base + 7 * distance;
+
+if (minutesLate > 15) {
+    fare = fare + 20;
+}
+
+if (distance > 10) {
+    fare = fare + Math.floor(fare * 0.1);
+}
+
+if (seed % 2 == 1) {
+    fare = fare - seed;
+} else {
+    fare = fare + seed;
+}
+
+// SAFE rounding (no infinite loop)
+var rem = fare % 5;
+if (rem != 0) {
+    fare = fare + (5 - rem);
+}
+
+alert(fare);
+
+</script>
+</body>
+</html>
